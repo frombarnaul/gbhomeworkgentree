@@ -60,7 +60,33 @@ namespace ConsoleApp27
             {
                 Console.Write(spouse.name + " ");
             }
+            Console.WriteLine();
 
+            Console.Write("Братья/Сестры: ");
+
+            var brosList = new List<FamilyMember>();
+            if(mother != null)
+            {
+                foreach (var child in mother?.children ?? null)
+                {
+                    if (child != this && !brosList.Contains(child))
+                    {
+                        brosList.Add(child);
+                        Console.Write(child.name);
+                    }
+                }
+            }
+            if(father != null)
+            {
+                foreach (var child in father.children)
+                {
+                    if (child != this && !brosList.Contains(child))
+                    {
+                        brosList.Add(child);
+                        Console.Write(child.name);
+                    }
+                }
+            }
             Console.WriteLine();
             Console.Write("Дети: ");
             foreach(var child in children)

@@ -17,7 +17,7 @@
             father.AddChild(daughter);
             mother.AddChild(daughter);
 
-            daughter.PrintRelatives();
+            son.PrintRelatives();
         }
     }
 }
